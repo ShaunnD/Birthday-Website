@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/xicon" href="Viper.ico">
-    <title>Celebration | Shaunn Dry</title>
+    <title>Celebration | Shaunn</title>
+    <link rel="icon" type="image/x-icon" href="Viper.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -78,8 +78,6 @@
               <h3 class="card-label">Turning</h3>
               <p class="card-value">32 Years</p>
             </div>
-
-
           </div>
 
           <div class="hobbies-block reveal">
@@ -97,7 +95,7 @@
             <p class="bio-text">
               I'm a kind of person who treats life like a well built network: everything should connect, flow, and make people feel seen.
               I'm driven by curiosity, grounded in loyalty, and fueled by a deep love for the people around me.
-              Curious, loyal, and just the right amount of chaotic brilliance, 
+              Curious, loyal, and just the right amount of chaotic brilliance,
               I'm happiest when bringing people together and turning ordinary moments into legendary ones.
             </p>
           </div>
@@ -114,10 +112,10 @@
 
           <div class="event-layout">
             <div class="event-main reveal">
-              <h3 class="event-name">Shaunn's 32nd birthday fiasco</h3>
+              <h3 class="event-name">Shaunn's 32nd Birthday Fiasco</h3>
               <p class="event-description">
                 It's a get together of all the people that I love and cherish. It's my party but I'm celebrating the people in my group.
-                I'd be honoured if you could join me for an amuzement park party at Gold reef city.
+                I'd be honoured if you could join me for an amusement park party at Gold Reef City.
               </p>
             </div>
 
@@ -184,7 +182,7 @@
                 </div>
                 <div class="event-detail-text">
                   <span class="event-detail-label">Address</span>
-                  <span class="event-detail-value">Northern Pkwy & Data Cres, Johannesburg, 2159</span>
+                  <span class="event-detail-value">Northern Pkwy &amp; Data Cres, Johannesburg, 2159</span>
                 </div>
               </div>
 
@@ -196,7 +194,7 @@
                 </div>
                 <div class="event-detail-text">
                   <span class="event-detail-label">RSVP Deadline</span>
-                  <span class="event-detail-value">31 June 2026</span>
+                  <span class="event-detail-value">30 June 2026</span>
                 </div>
               </div>
             </div>
@@ -214,35 +212,35 @@
 
           <div class="respond-layout">
             <div class="respond-tabs reveal">
-              <button class="tab-btn active" data-tab="rsvp">RSVP</button>
-              <button class="tab-btn" data-tab="message">Birthday Message</button>
+              <button class="tab-btn active" data-tab="rsvp" type="button">RSVP</button>
+              <button class="tab-btn" data-tab="message" type="button">Birthday Message</button>
             </div>
 
             <!-- RSVP Tab -->
-            <!-- < class="tab-panel active reveal" id="tab-rsvp"> -->
             <div class="tab-panel active reveal" id="tab-rsvp">
-              <form class="form-card" action="https://formspree.io/f/mbdqveyz" method="POST" id="rsvpForm">
+              <div class="form-card">
                 <h3 class="form-title">Will you be joining us?</h3>
                 <p class="form-subtitle">Let us know if you'll be attending the celebration.</p>
 
                 <div class="form-group">
                   <label class="form-label" for="rsvp-name">Full Name</label>
-                  <input class="form-input" type="text" id="rsvp-name" name="name" placeholder="Your full name" />
+                  <input class="form-input" type="text" id="rsvp-name" placeholder="Your full name" />
                 </div>
 
                 <div class="form-group">
                   <label class="form-label" for="rsvp-email">Email Address</label>
-                  <input class="form-input" type="email" id="rsvp-email" name="email" placeholder="your@email.com" />
+                  <input class="form-input" type="email" id="rsvp-email" placeholder="your@email.com" />
                 </div>
 
                 <div class="form-group">
                   <label class="form-label" for="rsvp-guests">Number of Guests</label>
-                  <input class="form-input" type="number" id="rsvp-guests" name="guests" min="1" max="10" placeholder="1" />
+                  <input class="form-input" type="number" id="rsvp-guests" min="1" max="10" placeholder="1" />
                 </div>
 
+                <!-- Injected by JS when guests > 1 -->
                 <div class="form-group guest-names-group" id="guest-names-group">
                   <label class="form-label">Additional Guest Names</label>
-                  <p class="guest-names-hint">Please enter the name of each guest you are bringing.</p>
+                  <p class="guest-names-hint">Please enter the name of each additional guest.</p>
                   <div id="guest-names-container"></div>
                 </div>
 
@@ -260,58 +258,54 @@
                       Regretfully Declining
                     </label>
                   </div>
-                  <div class="form-group" id="decline-message-group" style="display:none;">
-                    <label class="form-label" for="decline-message">
-                      Send a message instead
-                    </label>
-                      <textarea class="form-input form-textarea" id="decline-message" name="decline_message" placeholder="Leave a message if you can't attend..."></textarea>
-                  </div>
                 </div>
 
-                <div class="form-group">
-                  <label class="form-label" for="rsvp-dietary">Dietary Requirements (optional)</label>
-                  <input class="form-input" type="text" id="rsvp-dietary" name="dietary" placeholder="e.g. vegetarian, halal..." />
+                <!-- Shown only when declining -->
+                <div class="form-group decline-group" id="decline-group">
+                  <label class="form-label" for="decline-message">Reason for Declining (optional)</label>
+                  <textarea class="form-input form-textarea" id="decline-message" placeholder="Let us know why you'll be missed..."></textarea>
                 </div>
 
-                <button class="submit-btn" id="rsvpSubmitBtn">
+                <button class="submit-btn" id="rsvpSubmitBtn" type="button">
                   <span>Send RSVP</span>
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </button>
-              </form>
+              </div>
             </div>
 
-          <!-- Birthday Message Tab -->
-<div class="tab-panel reveal" id="tab-message">
-  <form class="form-card" id="msgForm" action="https://formspree.io/f/mbdqveyz" method="POST">
+            <!-- Birthday Message Tab -->
+            <div class="tab-panel" id="tab-message">
+              <div class="form-card">
+                <h3 class="form-title">Leave a Birthday Message</h3>
+                <p class="form-subtitle">Share your warm wishes for Shaunn on this special day.</p>
 
-    <h3 class="form-title">Leave a Birthday Message</h3>
-    <p class="form-subtitle">Share your warm wishes.</p>
+                <div class="form-group">
+                  <label class="form-label" for="msg-name">Your Name</label>
+                  <input class="form-input" type="text" id="msg-name" placeholder="Your name" />
+                </div>
 
-    <div class="form-group">
-      <label class="form-label">Your Name</label>
-      <input class="form-input" type="text" name="name" required>
-    </div>
+                <div class="form-group">
+                  <label class="form-label" for="msg-email">Email Address</label>
+                  <input class="form-input" type="email" id="msg-email" placeholder="your@email.com" />
+                </div>
 
-    <div class="form-group">
-      <label class="form-label">Email Address</label>
-      <input class="form-input" type="email" name="email" required>
-    </div>
+                <div class="form-group">
+                  <label class="form-label" for="msg-text">Your Message</label>
+                  <textarea class="form-input form-textarea" id="msg-text" placeholder="Write your birthday message here..."></textarea>
+                </div>
 
-    <div class="form-group">
-      <label class="form-label">Your Message</label>
-      <textarea class="form-input form-textarea" name="message" required></textarea>
-    </div>
+                <button class="submit-btn" id="msgSubmitBtn" type="button">
+                  <span>Send Message</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
 
-    <button type="submit" class="submit-btn" id="msgSubmitBtn">
-      <span>Send Message</span>
-    </button>
-
-  </form>
-</div>
-
-            <!-- Success / Error toast -->
+            <!-- Toast notification -->
             <div class="toast" id="toast">
               <span class="toast-icon">✓</span>
               <span class="toast-msg" id="toastMsg">Submitted successfully!</span>
