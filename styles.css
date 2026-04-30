@@ -320,18 +320,12 @@ ul {
    SCROLL REVEAL
    ============================================================ */
 .reveal {
-  opacity: 1;
-  transform: none;
-}
-
-/* Only animate if JS is active */
-.js .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
-.js .reveal.visible {
+.reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -883,33 +877,28 @@ ul {
 }
 
 /* ============================================================
-   GUEST NAMES – Dynamic fields
+   GUEST NAMES – dynamic fields
    ============================================================ */
 .guest-names-group {
   display: none;
 }
-
 .guest-names-group.visible {
   display: block;
 }
-
 .guest-names-hint {
   font-size: 0.82rem;
   color: var(--color-text-muted);
   margin-bottom: 0.85rem;
 }
-
 .guest-name-field {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 0.65rem;
 }
-
 .guest-name-field .form-input {
   flex: 1;
 }
-
 .guest-name-label {
   font-size: 0.78rem;
   font-weight: 500;
@@ -918,4 +907,14 @@ ul {
   color: var(--color-text-muted);
   white-space: nowrap;
   min-width: 64px;
+}
+
+/* ============================================================
+   DECLINE GROUP – hidden until "not-attending" selected
+   ============================================================ */
+.decline-group {
+  display: none;
+}
+.decline-group.visible {
+  display: block;
 }
