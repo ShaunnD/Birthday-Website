@@ -2,18 +2,25 @@
    CSS VARIABLES & RESET
    ============================================================ */
 :root {
-  --color-bg:          #0d0d0d;
-  --color-bg-alt:      #111418;
-  --color-surface:     #181c20;
-  --color-surface-2:   #1e2228;
-  --color-border:      rgba(193, 155, 83, 0.18);
-  --color-gold:        #c19b53;
-  --color-gold-light:  #e0bf80;
-  --color-gold-faint:  rgba(193, 155, 83, 0.08);
-  --color-text:        #e8e2d9;
-  --color-text-muted:  #8a8278;
-  --color-text-faint:  #4a4540;
+  /* ── Purple base palette ── */
+  --color-bg:          #0e0a14;
+  --color-bg-alt:      #130d1c;
+  --color-surface:     #1a1128;
+  --color-surface-2:   #211535;
+
+  /* ── Gold / yellow accent ── */
+  --color-border:      rgba(220, 180, 60, 0.20);
+  --color-gold:        #d4a017;
+  --color-gold-light:  #f0c84a;
+  --color-gold-faint:  rgba(212, 160, 23, 0.09);
+
+  /* ── Text ── */
+  --color-text:        #ede8f5;
+  --color-text-muted:  #8b7fa8;
+  --color-text-faint:  #4a3f62;
   --color-white:       #ffffff;
+
+  /* ── Status ── */
   --color-success:     #4caf72;
   --color-error:       #e05a4e;
 
@@ -25,7 +32,7 @@
   --radius-lg:         20px;
 
   --shadow-card:       0 4px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow:       0 0 40px rgba(193, 155, 83, 0.12);
+  --shadow-glow:       0 0 40px rgba(160, 80, 255, 0.15), 0 0 20px rgba(212, 160, 23, 0.08);
 
   --transition:        0.3s ease;
   --transition-slow:   0.6s ease;
@@ -221,7 +228,7 @@ ul {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(193, 155, 83, 0.07) 0%, transparent 60%),
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(130, 60, 220, 0.12) 0%, transparent 60%),
               var(--color-bg);
 }
 
@@ -230,8 +237,8 @@ ul {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 20% 80%, rgba(193, 155, 83, 0.04) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(193, 155, 83, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(120, 40, 200, 0.07) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 160, 23, 0.05) 0%, transparent 50%);
 }
 
 .hero-content {
@@ -284,7 +291,7 @@ ul {
 .hero-cta:hover {
   background: var(--color-gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(193, 155, 83, 0.3);
+  box-shadow: 0 8px 28px rgba(212, 160, 23, 0.35), 0 0 16px rgba(160, 80, 255, 0.2);
 }
 
 .hero-decoration {
@@ -651,7 +658,7 @@ ul {
 
 .form-input:focus {
   border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(193, 155, 83, 0.12);
+  box-shadow: 0 0 0 3px rgba(160, 80, 255, 0.18);
 }
 
 .form-textarea {
@@ -730,7 +737,7 @@ ul {
 .submit-btn:hover {
   background: var(--color-gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(193, 155, 83, 0.25);
+  box-shadow: 0 8px 28px rgba(212, 160, 23, 0.30), 0 0 14px rgba(160, 80, 255, 0.18);
 }
 
 .submit-btn:active {
@@ -874,47 +881,4 @@ ul {
   .hero-title {
     font-size: 2.8rem;
   }
-}
-
-/* ============================================================
-   GUEST NAMES – dynamic fields
-   ============================================================ */
-.guest-names-group {
-  display: none;
-}
-.guest-names-group.visible {
-  display: block;
-}
-.guest-names-hint {
-  font-size: 0.82rem;
-  color: var(--color-text-muted);
-  margin-bottom: 0.85rem;
-}
-.guest-name-field {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.65rem;
-}
-.guest-name-field .form-input {
-  flex: 1;
-}
-.guest-name-label {
-  font-size: 0.78rem;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-text-muted);
-  white-space: nowrap;
-  min-width: 64px;
-}
-
-/* ============================================================
-   DECLINE GROUP – hidden until "not-attending" selected
-   ============================================================ */
-.decline-group {
-  display: none;
-}
-.decline-group.visible {
-  display: block;
 }
